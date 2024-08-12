@@ -2,10 +2,10 @@ from django import forms
 
 
 class ReviewForm(forms.Form):
-    name = forms.CharField(label="Your name", max_length=100)
-    email = forms.EmailField(label="Your email")
-    review = forms.CharField(label="Your review", widget=forms.Textarea)
-
+    name = forms.CharField(label="Your name", max_length=100,widget=forms.TextInput(attrs={'class': 'form','placeholder': 'Please enter your name',  'required': 'True'}))
+    email = forms.EmailField(label="Your email",widget=forms.TextInput(attrs={'class': 'form','placeholder': 'Please enter your email'}))
+    review = forms.CharField(label="Your review", widget=forms.Textarea(attrs={'class': 'form','placeholder': 'Please enter your review..','rows': 5,'cols': 30}))
+# widgets/attrs for styling with css or bootstrap
     # validation
     def clean_name(self):
         name = self.cleaned_data.get("name")

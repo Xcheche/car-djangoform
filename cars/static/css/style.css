@@ -1,0 +1,40 @@
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: column;
+    width: 90%;
+    margin: auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    padding: 2%;
+    height: 45%;
+    background-color: #f5f5f5;
+    border-radius:10px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth transition */
+    animation: fadeInScale 0.8s ease-in-out; /* Fade-in animation */
+}
+
+/* Hover effect */
+form:hover {
+    transform: scale(1.05); /* Slight scaling on hover */
+    background-color: #e0e0e0; /* Light background change on hover */
+}
+
+/* Keyframes for fade-in and scale-up animation */
+@keyframes fadeInScale {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+body{
+    background-color: #02292385;
+}

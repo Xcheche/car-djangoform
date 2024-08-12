@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,10 +7,11 @@
     <title>Rental Review</title>
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
 
-<div class="container mt-5">
+{% comment %} <div class="container mt-5">
     <div class="row justify-content-center">
         <div class="col-md-6">
             <div class="card">
@@ -40,6 +42,20 @@
             </div>
         </div>
     </div>
+</div> {% endcomment %}
+
+<div class="container col-md-6 offset-md-3" >
+    <form action="" method="post">
+    {% csrf_token %}
+    {% for field in form %}
+
+    {{ field.label_tag }} <br>
+     {{ field }}</p>
+
+    {% endfor %}
+
+    <input type="submit" value="Submit"  class="btn btn-primary rounded-circle p-0" style="width: 50%; height: 50%;">
+</form>
 </div>
 
 <!-- Bootstrap JS and dependencies (optional) -->
